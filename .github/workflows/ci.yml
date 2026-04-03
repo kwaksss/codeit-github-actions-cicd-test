@@ -22,3 +22,12 @@ jobs:   #실행할 작업(job) 정의
 
       - name: 빌드 및 테스트
         run: ./gradlew clean build    #build안에서 Test 이루어지고, jar 파일이 만들어진다.
+
+      - name: Docker Build
+        run: |    #.은 현재 위치의 docker 파일을 가지고 build
+          docker build -t myapp.latest .
+
+      -  name: Docker Build 및 커밋 해시태그 설정
+         run: |
+           IMAGE_TAG=${GITHUB_SHA::7}
+           docker built -t myapp:$IMAGE_TAG .
