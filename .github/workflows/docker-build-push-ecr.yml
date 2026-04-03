@@ -25,7 +25,7 @@ jobs:
 
       #gradlew 실행 권한 설정
       - name: Grant execute permission
-        run: chomod +x gradlew
+        run: chmod +x gradlew
 
       #빌드
       - name: Build JAR
