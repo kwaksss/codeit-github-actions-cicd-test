@@ -1,0 +1,14 @@
+awserver:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+  file:
+    name: /app/logs/myapp.log
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
